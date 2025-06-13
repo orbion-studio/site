@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const services = [
@@ -26,15 +25,14 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 relative">
+    <section id="services" className="pt-40 pb-12 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-black mb-6">
+          <h2 className="text-3xl md:text-4xl font-black mb-4">
             Nossos <span className="text-cosmic-blue">Serviços</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Oferecemos soluções digitais abrangentes projetadas para elevar seu negócio
-            e criar conexões significativas com seu público.
+            A simplicidade é o último grau de sofisticação.
           </p>
         </div>
         

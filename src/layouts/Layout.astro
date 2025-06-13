@@ -2,7 +2,7 @@
 import './src/styles/global.css';
 ---
 
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -13,4 +13,9 @@ import './src/styles/global.css';
 	<body>
 		<slot />
 	</body>
+
+	<script>
+		const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+		document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+	</script>
 </html>

@@ -1,8 +1,6 @@
-import React from 'react';
-
 const AnimatedBackground = () => {
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden dark:opacity-60">
       {/* Orbital Paths */}
       <div className="orbital-path w-96 h-96 top-1/4 left-1/4 opacity-30"></div>
       <div className="orbital-path w-64 h-64 top-1/2 right-1/4 opacity-20 animation-delay-2s"></div>
@@ -31,7 +29,7 @@ const AnimatedBackground = () => {
       </div>
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 cosmic-gradient"></div>
+      <div className="absolute inset-0 cosmic-gradient dark:hidden"></div>
     </div>
   );
 };

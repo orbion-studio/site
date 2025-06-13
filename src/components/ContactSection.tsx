@@ -1,21 +1,10 @@
-import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 const ContactSection = () => {
-  const openWhatsApp = () => {
-    // Replace with your actual WhatsApp number
-    const phoneNumber = "1234567890"; // Update this number
-    const message = "Olá! Tenho interesse em discutir um projeto com a Orbion Studio.";
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
-
-  const openCalendly = () => {
-    // Replace with your actual Calendly link
-    const calendlyUrl = "https://calendly.com/orbion-studio"; // Update this URL
-    window.open(calendlyUrl, '_blank');
-  };
+  const whatsappNumber = import.meta.env.PHONE_NUMBER || "";
+  const whatsappMessage = "Olá, gostaria de saber mais sobre os serviços oferecidos por vocês.";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <section id="contact" className="py-24 relative">
@@ -31,7 +20,7 @@ const ContactSection = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-card hover:scale-105">
+          <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-card/50 hover:scale-105">
             <CardContent className="p-8 text-center">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
@@ -45,16 +34,16 @@ const ContactSection = () => {
                 Inicie uma conversa instantaneamente. Obtenha respostas rápidas para suas perguntas e 
                 discuta os requisitos do seu projeto em tempo real.
               </p>
-              <Button 
-                onClick={openWhatsApp}
-                className="bg-green-600 hover:bg-green-700 text-white w-full cursor-pointer"
-              >
-                Abrir WhatsApp
-              </Button>
+
+              <a href={whatsappLink} target="_blank">
+                <Button className="bg-green-600 hover:bg-green-700 text-white w-full cursor-pointer">
+                  Abrir WhatsApp
+                </Button>
+              </a>
             </CardContent>
           </Card>
           
-          <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-card hover:scale-105">
+          <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-card/50 hover:scale-105">
             <CardContent className="p-8 text-center">
               <div className="w-16 h-16 bg-cosmic-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-cosmic-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,12 +57,12 @@ const ContactSection = () => {
                 Reserve uma consulta em sua conveniência. Vamos discutir sua visão
                 e explorar como podemos dar vida a ela.
               </p>
-              <Button 
-                onClick={openCalendly}
-                className="bg-cosmic-blue hover:bg-cosmic-blue-dark text-white w-full cursor-pointer"
-              >
-                Agendar Reunião
-              </Button>
+
+              <a href="https://calendly.com/orbion-studio/reuniao-de-descoberta" target="_blank">
+                <Button className="bg-cosmic-blue hover:bg-cosmic-blue-dark text-white w-full cursor-pointer">
+                  Agendar Reunião
+                </Button>
+              </a>
             </CardContent>
           </Card>
         </div>
