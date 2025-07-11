@@ -10,15 +10,15 @@ const HeroSection = () => {
     <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center relative z-10">
       <div className="px-8 space-y-6 md:px-24 lg:px-32 lg:space-y-8 max-w-6xl relative z-20">
         <div className="space-y-2">
-          <h1 className="text-md md:text-2xl lg:text-3xl font-righteous text-foreground">
+          <p className="text-md md:text-2xl lg:text-3xl font-righteous text-foreground">
             orbion studio
-          </h1>
+          </p>
           <div className="w-10 h-1 md:w-12 lg:w-16 bg-primary rounded-full shadow-md"></div>
         </div>
 
-        <h4 className="text-3xl md:text-4xl lg:text-6xl font-black font-inter text-foreground">
+        <h1 className="text-3xl md:text-4xl lg:text-6xl font-black font-inter text-foreground">
           Desenvolvimento de Software e Web Design.
-        </h4>
+        </h1>
 
         <div className="flex flex-col sm:flex-row gap-4">
           <a href={whatsappLink} target="_blank">
