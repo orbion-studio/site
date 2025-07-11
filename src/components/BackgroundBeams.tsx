@@ -80,7 +80,7 @@ const BackgroundBeams = React.memo(
             strokeWidth="0.5"
           ></path>
 
-          {paths.map((path, index) => (
+          {paths.slice(10, 25).map((path, index) => (
             <motion.path
               key={`path-` + index}
               d={path}
